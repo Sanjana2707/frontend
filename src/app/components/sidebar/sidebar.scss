@@ -1,14 +1,21 @@
 .sidebar {
   width: 250px;
-  background-color: #ffffff;
+  background-color: #240f6e;
   border-right: 1px solid #cccccc;
   padding: 20px;
   height: 100%;
+  transition: width 0.3s ease;
+
+  &--collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
 
   &__title {
     font-size: 20px;
     font-weight: bold;
-    color: #333333;
+    color: #ffffff;
     margin: 0;
   }
 }

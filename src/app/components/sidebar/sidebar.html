@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" [class.sidebar--collapsed]="!isSidebarExpanded()">
   <nav class="sidebar__nav">
     <a routerLink="/view-qbanks" routerLinkActive="active" class="sidebar__link sidebar__title">View Qbanks</a>
   </nav>

@@ -17,8 +17,6 @@
   align-items: center;  
   justify-content: center;  
 
-  &__placeholder {
-    font-size: 24px; 
-    color: #333;  
-  }
+ flex-direction: column; 
+  gap: 10px; 
 }
