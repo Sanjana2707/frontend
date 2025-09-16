@@ -1,4 +1,17 @@
-<div class="view-qbanks">
-    <h1>Question Banks</h1>
-   
+<div class="qbank">
+  <div class="qbank__list">
+    @for (qbank of qbanks(); track qbank.id) {
+      <div class="qbank__card" >
+        <h3 class="qbank__title">{{ qbank.name }}</h3>
+        <div class="qbank__details">
+          <span class="qbank__questions">{{ qbank.noOfQuestions }}</span>
+        </div>
+        <button 
+          class="qbank__button" 
+          [disabled]="!qbank.status">
+          TAKE TEST
+        </button>
+      </div>
+    }
+  </div>
 </div>
