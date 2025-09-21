@@ -1,9 +1,14 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { QbankState } from '../../store/qbank.reducer';
+import { selectQbankError, selectQbankLoading, selectQbanks } from '../../store/qbank.selectors';
+import { Store } from '@ngrx/store';
+import { loadQbanks } from '../../store/qbank.actions';
 
-interface Qbank {
+
+ export interface Qbank {
   _id: string;
   id:string
   name: string;
@@ -15,7 +20,7 @@ interface Qbank {
 @Component({
   selector: 'app-view-qbanks',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [AsyncPipe],
   templateUrl: './view-qbanks.html',
   styleUrl: './view-qbanks.scss'
 })
@@ -23,14 +28,17 @@ interface Qbank {
 
 
 export class ViewQbanks implements OnInit {
-  qbanks = signal<Qbank[]>([]);
+  qbanks$: Observable<Qbank[]>;
+  loading$: Observable<boolean>;
+  error$: Observable<any>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private store: Store<{ qbank: QbankState }>) {
+    this.qbanks$ = this.store.select(selectQbanks);
+    this.loading$ = this.store.select(selectQbankLoading);
+    this.error$ = this.store.select(selectQbankError);
+  }
 
   ngOnInit() {
-    this.http.get<Qbank[]>('https://quiz-server-39z8.onrender.com/api/qbanks').subscribe({
-      next: (data) => this.qbanks.set(data),
-      error: (err) => console.error('Error fetching qbanks:', err)
-    });
+    this.store.dispatch(loadQbanks());
   }
-}
+} 
