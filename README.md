@@ -214,70 +214,9 @@ The application integrates with an external API for question bank data:
 - **Method**: GET
 - **Response**: Array of Qbank objects
 
-##  Styling
 
-The application uses SCSS for styling with:
-- **Global Styles**: Reset and base styles in `styles.scss`
-- **Component Styles**: Individual SCSS files for each component
-- **Responsive Design**: Mobile-first approach with flexible layouts
 
-##  Testing
 
-The project includes comprehensive testing setup:
-- **Unit Tests**: Jasmine framework with Karma test runner
-- **Component Tests**: Individual component testing
-- **Coverage Reports**: Built-in code coverage reporting
 
-##  Configuration
 
-### Angular Configuration
-- **Standalone Components**: Modern Angular architecture
-- **Zoneless Change Detection**: Performance optimization
-- **SCSS Support**: Built-in SCSS compilation
-- **TypeScript**: Strict type checking enabled
-
-### Build Configuration
-- **Production Build**: Optimized for production deployment
-- **Development Build**: Source maps and debugging enabled
-- **Asset Management**: Automatic asset copying and optimization
-
-##  Browser Support
-
-The application supports all modern browsers:
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-##  Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-##  License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-##  Known Issues
-
-- Question bank status functionality is implemented but may need backend integration
-- Error handling could be enhanced with more specific error messages
-- Loading states could benefit from skeleton loaders
-
-##  Future Enhancements
-
-- [ ] User authentication and authorization
-- [ ] Quiz taking functionality
-- [ ] Progress tracking and analytics
-- [ ] Offline support with service workers
-- [ ] Dark mode theme
-- [ ] Internationalization (i18n) support
-- [ ] Advanced filtering and search for question banks
-
-##  Support
-
-For support and questions, please open an issue in the repository or contact the development team.
 
