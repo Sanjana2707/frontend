@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'quiz-dashboard',
   standalone: true,
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { ViewQbanks } from './components/view-qbanks/view-qbanks';
-import { Dashboard } from './components/dashboard/dashboard';
+import { ViewQbanks, Dashboard } from 'quiz-components';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

@@ -1,17 +1,17 @@
 import { Component, inject} from '@angular/core';
-import { App } from '../../app';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'quiz-header',
   standalone: true,
   imports: [],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-    private readonly app = inject(App);
+    private readonly sidebarService = inject(SidebarService);
     
   toggleSidebar() {
-    this.app.isSidebarExpanded.set(!this.app.isSidebarExpanded());
+    this.sidebarService.toggleSidebar();
   }
 }

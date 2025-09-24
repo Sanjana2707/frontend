@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Qbank } from "../components/view-qbanks/view-qbanks";
+import { Qbank } from "../models/qbank.model";
 
 export const loadQbanks = createAction(
     '[Qbank] Load Qbanks'

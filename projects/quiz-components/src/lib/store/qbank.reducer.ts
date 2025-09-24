@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { loadQbanks, loadQbanksSuccess, loadQbanksFailure } from "./qbank.actions";
-import { Qbank } from "../components/view-qbanks/view-qbanks";
+import { Qbank } from "../models/qbank.model";
 
 export interface QbankState {
     qbanks: Qbank[];

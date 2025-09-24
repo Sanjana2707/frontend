@@ -5,8 +5,7 @@ import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient } from '@angular/common/http';
-import { qbankReducer } from './store/qbank.reducer';
-import { QbankEffects } from './store/qbank.effects';
+import { qbankReducer, QbankEffects } from 'quiz-components';
 
 export const appConfig: ApplicationConfig = {
   providers: [

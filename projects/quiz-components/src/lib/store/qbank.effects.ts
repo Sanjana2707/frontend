@@ -1,7 +1,7 @@
 import { createEffect, ofType, Actions } from "@ngrx/effects";
 import { catchError, map, mergeMap } from "rxjs/operators";
 import { loadQbanks, loadQbanksSuccess, loadQbanksFailure } from "./qbank.actions";
-import { Qbank } from "../components/view-qbanks/view-qbanks";
+import { Qbank } from "../models/qbank.model";
 import { HttpClient } from "@angular/common/http";
 import { of } from "rxjs";
 import { Injectable, inject } from "@angular/core";

@@ -1,24 +1,14 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { QbankState } from '../../store/qbank.reducer';
 import { selectQbankError, selectQbankLoading, selectQbanks } from '../../store/qbank.selectors';
 import { Store } from '@ngrx/store';
 import { loadQbanks } from '../../store/qbank.actions';
-
-
- export interface Qbank {
-  _id: string;
-  id:string
-  name: string;
-  category: string;
-  noOfQuestions: number;
-  status: boolean;
-}
+import { Qbank } from '../../models/qbank.model';
 
 @Component({
-  selector: 'app-view-qbanks',
+  selector: 'quiz-view-qbanks',
   standalone: true,
   imports: [AsyncPipe],
   templateUrl: './view-qbanks.html',
