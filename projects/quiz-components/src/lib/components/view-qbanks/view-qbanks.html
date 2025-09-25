@@ -7,7 +7,7 @@
       <div class="error">Error: {{ error.message || 'Failed to load qbanks'}}</div>
     }
     @else {
-    @for (qbank of (qbanks$ | async); track qbank.id) {
+    @for (qbank of (qbanks$ | async); track qbank._id) {
       <div class="qbank__card" >
         <h3 class="qbank__title">{{ qbank.name }}</h3>
         <div class="qbank__details">
@@ -15,7 +15,9 @@
         </div>
         <button 
           class="qbank__button" 
-          [disabled]="!qbank.status">
+          [disabled]="!qbank.status"
+          [routerLink]="['/take-test', qbank._id]"
+          (click)="onTakeTest(qbank._id)">
           TAKE TEST 
         </button>
       </div>

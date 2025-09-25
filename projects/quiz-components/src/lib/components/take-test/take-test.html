@@ -1,0 +1,24 @@
+<div class="take-test">
+  @if (loading$ | async) {
+    <div class="loader">Loading questions...</div>
+  } @else if (error$ | async; as error) {
+    <div class="error">Error: {{ error.message || 'Failed to load questions' }}</div>
+  } @else if (qbank$ | async; as qbank) {
+    <h2>{{ qbank.name }} ({{ qbank.noOfQuestions }} questions)</h2>
+    @if (qbank.questions && qbank.questions.length) {
+      @for (question of qbank.questions; track question._id) {
+        <div class="question-card">
+          <h3>{{ question.description }}</h3>
+          <ul>
+            @for (option of question.options; track option.text) {
+              <li [class.correct]="option.isCorrect">{{ option.text }}</li>
+            }
+          </ul>
+        </div>
+      }
+    } @else {
+      <div>No questions available.</div>
+    }
+  }
+</div>
+      

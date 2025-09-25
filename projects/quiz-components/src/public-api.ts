@@ -7,6 +7,7 @@ export * from './lib/components/header/header';
 export * from './lib/components/sidebar/sidebar';
 export * from './lib/components/dashboard/dashboard';
 export * from './lib/components/view-qbanks/view-qbanks';
+export * from './lib/components/take-test/take-test';
 
 // Services
 export * from './lib/services/sidebar.service';
