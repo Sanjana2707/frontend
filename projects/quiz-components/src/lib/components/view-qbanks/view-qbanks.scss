@@ -20,6 +20,8 @@ $error-color: #d32f2f;
     width: 100%;
     max-width: 900px;
     padding: 10px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
   }
 
   &__card {

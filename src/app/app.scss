@@ -8,12 +8,15 @@
 .app-main {
   display: flex;
   flex: 1;  
+  min-height: 0;
 }
 
 .app-content {
   flex: 1;  
   background-color: #e0e0e0;  
   display: flex;
+  min-height: 0;
+  overflow-y: auto;
  
 
  flex-direction: column; 
