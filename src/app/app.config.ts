@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
@@ -15,6 +15,12 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideStore(),
     provideState({name: 'qbank', reducer: qbankReducer}),
-    provideEffects([QbankEffects])
-]
+    provideEffects([QbankEffects]),
+    provideStoreDevtools({
+      maxAge: 25,
+      logOnly: true,
+      autoPause: true
+    }),
+  ]
 };
+
