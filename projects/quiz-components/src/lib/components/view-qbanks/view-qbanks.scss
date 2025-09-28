@@ -1,4 +1,4 @@
-// Define reusable variables
+
 $primary-color: #007bff;
 $disabled-color: #cccccc;
 $card-bg: #fff;
@@ -12,102 +12,134 @@ $error-color: #d32f2f;
   padding: 20px;
   background-color: #e0e0e0;
   min-height: calc(100vh - 60px);
+}
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 900px;
-    padding: 10px;
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
-  }
+.tab-group {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 900px;
+}
 
-  &__card {
-    background-color: $card-bg;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: $card-shadow;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: center;
-    width: 100%;
-    min-width: 500px;
-  }
+.qbank__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 900px;
+  padding: 10px;
+}
 
-  &__title {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+.qbank__card {
+  background-color: $card-bg;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: $card-shadow;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  width: 100%;
+  min-width: 500px;
+}
 
-  &__details {
-    display: flex;
-    gap: 100px;
-  }
+.qbank__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
-  &__questions {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #333;
-    text-align: right;
-  }
+.qbank__date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
 
-  &__button {
-    background-color: $primary-color;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 20px;
-    transition: background-color 0.3s ease;
+.qbank__details {
+  display: flex;
+  gap: 100px;
+}
 
-    &--disabled,
-    &:disabled {
-      background-color: $disabled-color;
-      color: #666; // Darker text for contrast
-      cursor: not-allowed;
-      opacity: 0.7; // Slightly faded for disabled state
-    }
+.qbank__questions {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  text-align: right;
+}
 
+.qbank__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.qbank__button {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &--modify {
+    background-color: #28a745; /* Green for Modify */
     &:hover:not(:disabled) {
-      background-color: darken($primary-color, 10%); // Darker blue on hover
+      background-color: darken(#28a745, 10%);
     }
   }
 
-  .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    color: $primary-color;
-
-    &::before {
-      content: '';
-      width: 24px;
-      height: 24px;
-      border: 3px solid $primary-color;
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-right: 10px; // Space between spinner and text
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+  &--review {
+    background-color: #ffc107; /* Yellow for Review */
+    color: #333;
+    &:hover:not(:disabled) {
+      background-color: darken(#ffc107, 10%);
     }
   }
 
-  .error {
-    color: $error-color;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba($error-color, 0.1); // Light red background for emphasis
-    border-radius: 5px;
+  &--disabled,
+  &:disabled {
+    background-color: $disabled-color;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
   }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: $primary-color;
+
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 3px solid $primary-color;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.error {
+  color: $error-color;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba($error-color, 0.1);
+  border-radius: 5px;
+}
+
+.empty {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+  color: #666;
 }

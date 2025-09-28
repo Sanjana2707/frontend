@@ -5,4 +5,5 @@ export interface Qbank {
   category: string;
   noOfQuestions: number;
   status: boolean;
+  createdAt?: string;
 }

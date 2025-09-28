@@ -6,6 +6,7 @@ import { provideStore, provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient } from '@angular/common/http';
 import { qbankReducer, QbankEffects } from 'quiz-components';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,7 @@ export const appConfig: ApplicationConfig = {
       logOnly: true,
       autoPause: true
     }),
+    provideAnimations()
   ]
 };
 
