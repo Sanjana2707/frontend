@@ -35,10 +35,11 @@ $error-color: #d32f2f;
   border-radius: 5px;
   box-shadow: $card-shadow;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr 150px auto;
   align-items: center;
   width: 100%;
   min-width: 500px;
+  gap: 20px;
 }
 
 .qbank__title {
@@ -54,7 +55,7 @@ $error-color: #d32f2f;
 
 .qbank__details {
   display: flex;
-  gap: 100px;
+  justify-content: flex-end;
 }
 
 .qbank__questions {
@@ -79,17 +80,17 @@ $error-color: #d32f2f;
   transition: background-color 0.3s ease;
 
   &--modify {
-    background-color: #28a745; /* Green for Modify */
+    background-color: $primary-color; 
     &:hover:not(:disabled) {
-      background-color: darken(#28a745, 10%);
+      background-color: darken($primary-color, 10%);
     }
   }
 
   &--review {
-    background-color: #ffc107; /* Yellow for Review */
+    background-color: $disabled-color; 
     color: #333;
     &:hover:not(:disabled) {
-      background-color: darken(#ffc107, 10%);
+      background-color: darken($disabled-color, 10%);
     }
   }
 
